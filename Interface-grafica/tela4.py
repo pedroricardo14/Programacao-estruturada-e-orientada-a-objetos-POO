@@ -1,0 +1,23 @@
+from tkinter import *
+from tkinter import messagebox
+janela = Tk()
+
+rot1 = Label(janela,text="Valor 1:")
+rot1.grid(row=0, column=0)
+campo1 = Entry(janela)
+campo1.grid(row=0, column=1)
+
+rot2 = Label(janela,text="Valor 2:")
+rot2.grid(row=1,column=0)
+campo2 = Entry(janela)
+campo2.grid(row=1, column=1)
+
+def somar():
+    v1 = int(campo1.get())
+    v2 = int(campo2.get())
+    frase = f"Soma = {v1+v2}"
+    messagebox.showinfo(message=frase)
+bot = Button(janela,text="Somar", command=somar)
+bot.grid(row=2,column=1)
+
+janela.mainloop()
